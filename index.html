@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova — Simple Responsive Site</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a href="#home" class="brand">Nova<span>.</span></a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNav">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav class="primary-nav" id="primaryNav">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container">
+        <p class="eyebrow">Welcome</p>
+        <h1>A simple site that<br>works on every screen.</h1>
+        <p class="lead">
+          This is a lightweight starting template with a responsive navbar —
+          resize the window or open it on your phone to see the menu collapse.
+        </p>
+        <div class="hero-actions">
+          <a href="#services" class="btn btn-primary">See what's included</a>
+          <a href="#about" class="btn btn-ghost">Learn more</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About this template</h2>
+        <p class="section-lead">
+          Built with plain HTML and CSS — no frameworks, no build step.
+          Copy the two files and start editing.
+        </p>
+      </div>
+    </section>
+
+    <section id="services" class="section section-alt">
+      <div class="container">
+        <h2>What's included</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Responsive navbar</h3>
+            <p>Collapses into a mobile menu below 768px, with an accessible toggle button.</p>
+          </div>
+          <div class="card">
+            <h3>Fluid typography</h3>
+            <p>Headings scale smoothly between mobile and desktop using clamp().</p>
+          </div>
+          <div class="card">
+            <h3>Flexible grid</h3>
+            <p>Content sections reflow from a single column to multiple columns automatically.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Get in touch</h2>
+        <p class="section-lead">Swap this section for a contact form, a map, or your own content.</p>
+        <a href="mailto:hello@example.com" class="btn btn-primary">hello@example.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Nova. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const primaryNav = document.getElementById('primaryNav');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = primaryNav.classList.toggle('is-open');
+      navToggle.classList.toggle('is-active', isOpen);
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close the mobile menu after tapping a link
+    primaryNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        primaryNav.classList.remove('is-open');
+        navToggle.classList.remove('is-active');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+</body>
+</html>
