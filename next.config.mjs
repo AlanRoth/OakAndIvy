@@ -4,7 +4,6 @@ const nextConfig = {
 
   basePath: '/OakAndIvy',
   assetPrefix: '/OakAndIvy/',
-  distDir: 'root',
   env: {
     NEXT_PUBLIC_BASE_PATH: '/OakAndIvy',
   },
