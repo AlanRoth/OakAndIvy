@@ -54,7 +54,7 @@ export function Hero() {
         </div>
         <div className="overflow-hidden rounded-2xl">
           <img
-            src={assetPath('/images/hero-nanny.png')}
+            src={assetPath('/images/hero-nanny.jpg')}
             alt="A nanny reading a picture book with two young children in a cozy living room"
             className="h-full w-full object-cover"
           />

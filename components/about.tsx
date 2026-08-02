@@ -20,7 +20,7 @@ export function About() {
       <div className="grid items-center gap-10 md:grid-cols-2">
         <div className="order-2 overflow-hidden rounded-2xl md:order-1">
           <img
-            src={assetPath('/images/about-outdoors.png')}
+            src={assetPath('/images/about-outdoors.jpg')}
             alt="A nanny and two children collecting leaves under an oak tree in a sunny park"
             className="h-full w-full object-cover"
           />
