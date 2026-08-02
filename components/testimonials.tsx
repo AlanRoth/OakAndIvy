@@ -3,19 +3,19 @@ import { Star } from 'lucide-react'
 const testimonials = [
   {
     quote:
-      'Our nanny from Oak & Ivy has been a blessing. The kids run to the door when she arrives, and I finally have peace of mind at work.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna. Aliqua enim.',
     name: 'Sarah M.',
     detail: 'Mum of two, full-time care',
   },
   {
     quote:
-      'The matching process was so thoughtful. They really listened to what our family needed and found someone who fits perfectly.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore. Magna elit.',
     name: 'James & Priya T.',
     detail: 'Parents of a toddler',
   },
   {
     quote:
-      'As first-time parents, the newborn support was invaluable. Gentle, knowledgeable, and endlessly patient with all our questions.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore. Magna aliqua si.',
     name: 'Emily R.',
     detail: 'New mum, infant support',
   },
