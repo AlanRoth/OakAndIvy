@@ -5,10 +5,8 @@ const nextConfig = {
   basePath: '/OakAndIvy',
   assetPrefix: '/OakAndIvy/',
 
-  trailingSlash: true,
-
-  typescript: {
-    ignoreBuildErrors: true,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: '/OakAndIvy',
   },
 
   images: {

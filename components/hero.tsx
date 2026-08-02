@@ -1,5 +1,6 @@
 import { ShieldCheck, HeartHandshake, Clock } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { assetPath } from '@/lib/utils'
 
 const highlights = [
   { icon: ShieldCheck, label: 'Fully vetted & DBS checked' },
@@ -53,7 +54,7 @@ export function Hero() {
         </div>
         <div className="overflow-hidden rounded-2xl">
           <img
-            src="/images/hero-nanny.png"
+            src={assetPath('/images/hero-nanny.png')}
             alt="A nanny reading a picture book with two young children in a cozy living room"
             className="h-full w-full object-cover"
           />
