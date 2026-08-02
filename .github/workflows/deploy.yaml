@@ -67,7 +67,11 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
-
+      - name: Verify export
+        run: |
+          ls -la out
+          find out -maxdepth 2 -type f | head -20
+  
   # Deployment job
   deploy:
     environment:
