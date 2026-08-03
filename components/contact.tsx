@@ -3,9 +3,37 @@
 import { useState } from 'react'
 import { Mail, Phone, MapPin } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { useRef } from "react";
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false)
+  const formRef = useRef<HTMLFormElement>(null)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    if (!formRef.current) return
+
+    const formData = new FormData(formRef.current)
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        setSubmitted(true)
+        formRef.current.reset()
+      } else {
+        console.error(result)
+      }
+    } catch (err) {
+      console.error(err)
+    }
+  }
 
   return (
     <section id="contact" className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-20">
@@ -69,10 +97,8 @@ export function Contact() {
               action="https://api.web3forms.com/submit"
               method="POST"
               className="flex flex-col gap-4"
-              onSubmit={(e) => {
-                e.preventDefault()
-                setSubmitted(true)
-              }}
+              ref={formRef}
+              onSubmit={handleSubmit}
             >
               <input type="hidden" name="access_key" value="f5292234-2edd-48f1-aa6b-10a76d298139"/>
               <div className="grid gap-4 sm:grid-cols-2">
