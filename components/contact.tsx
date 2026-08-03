@@ -66,12 +66,15 @@ export function Contact() {
             </div>
           ) : (
             <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
               className="flex flex-col gap-4"
               onSubmit={(e) => {
                 e.preventDefault()
                 setSubmitted(true)
               }}
             >
+              <input type="hidden" name="access_key" value="f5292234-2edd-48f1-aa6b-10a76d298139"/>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="flex flex-col gap-1.5">
                   <label htmlFor="name" className="text-sm font-medium text-foreground">
